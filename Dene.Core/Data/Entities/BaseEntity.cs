@@ -8,20 +8,40 @@ using System.Threading.Tasks;
 
 namespace Dene.Core.Data.Entities
 {
-    public class BaseEntity:IEntity
+    public class BaseEntity : IEntity
     {
+        //    [Key]
+        //    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //    [Column("Id")]
+        //    public long Id { get; set; }
+
+
+        //    [System.Text.Json.Serialization.JsonIgnore]
+        //    [Column("Name")]
+        //    public string Name { get; set; }
+
+        //    [System.Text.Json.Serialization.JsonIgnore]
+        //    [Column("LastName")]
+        //    public string LastName { get; set; }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("Id")]
+        [Column("id")]
         public long Id { get; set; }
 
+        [System.Text.Json.Serialization.JsonIgnore]
+        [Column("status")]
+        public bool Status { get; set; }
 
         [System.Text.Json.Serialization.JsonIgnore]
-        [Column("Name")]
-        public string Name { get; set; }
+        [Column("created_date")]
+        public DateTime CreatedDate { get; set; }
 
         [System.Text.Json.Serialization.JsonIgnore]
-        [Column("LastName")]
-        public string LastName { get; set; }
+        [Column("modified_date")]
+        public DateTime ModifiedDate { get; set; }
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        [Column("deleted_date")]
+        public DateTime DeletedDate { get; set; }
     }
 }

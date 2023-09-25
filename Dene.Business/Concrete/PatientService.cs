@@ -348,35 +348,39 @@ namespace Dene.Business.Concrete
             var response = new GetTotalAgeResponse();
             try
             {
+
                 var patients = _patientRepository.GetList();
                 List<PatientModel> patientsModels = new List<PatientModel>();
+                int totalAgeIn5Years = 0;
                 foreach (var patient in patients)
-                {
-                    //  var totalAge = 0;
-                    //  DateTime birthDate = patient.BirthDate.AddYears(5);
-                    //  var ageIn5 = DateTime.Now.Year-birthDate.Year;
-                    //  totalAge += ageIn5;
+                { 
 
                         var model = new PatientModel();
-                        model.Id = patient.Id;
-                        model.Name = patient.Name;
-                        model.LastName = patient.LastName;
-                        model.TcNo = patient.TcNo;
-                        model.Gender = patient.Gender;
+                        //model.Id = patient.Id;
+                        //model.Name = patient.Name;
+                        //model.LastName = patient.LastName;
+                        //model.TcNo = patient.TcNo;
+                        //model.Gender = patient.Gender;
                         model.BirthDate = patient.BirthDate;
-                        model.Place = patient.Place;
-                        model.BloodType = patient.BloodType;
-                        model.Phone = patient.Phone;
-                        model.Eposta = patient.Eposta;
-                        model.Adress = patient.Adress;
-                        model.PoliClinic = patient.PoliClinic;
-                        model.InDate = patient.InDate;
-                        model.OutDate = patient.OutDate;
-                        //model.AgeIn = patient.AgeIn;
-                        
-                        patientsModels.Add(model);
+                        //model.Place = patient.Place;
+                        //model.BloodType = patient.BloodType;
+                        //model.Phone = patient.Phone;
+                        //model.Eposta = patient.Eposta;
+                        //model.Adress = patient.Adress;
+                        //model.PoliClinic = patient.PoliClinic;
+                        //model.InDate = patient.InDate;
+                        //model.OutDate = patient.OutDate;
+
+                   // DateTime dgunu = new DateTime(1990, 12, 15);
+                    DateTime birthDateIn5Years = patient.BirthDate.AddYears(-5);
+                    int ageIn5Years=0;
+                   // int ageIn5Years = DateTime.Now.Year  - birthDateIn5Years.Year;
+                    totalAgeIn5Years += ageIn5Years;
+                    patientsModels.Add(model);
                     
                 }
+                response.TotalAgeIn5Years = totalAgeIn5Years;
+
                 response.PatientModels = patientsModels;
                 response.Code = "200";
                 response.Message = "5 yıl sonraki yaşları toplamı";

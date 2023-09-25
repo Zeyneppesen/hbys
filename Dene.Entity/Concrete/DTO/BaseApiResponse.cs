@@ -8,6 +8,7 @@ namespace Dene.Entity.Concrete.DTO
 {
     public class BaseApiResponse
     {
+        public  long TotalAgeIn5Years { get; set; }
         public string Code { get; set; }
         public string Message { get; set; }
 

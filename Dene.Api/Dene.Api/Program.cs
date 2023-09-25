@@ -1,5 +1,4 @@
 using Dene.Api.Extensions;
-using Dene.Data.Concrete.Ef;
 using FluentAssertions.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
