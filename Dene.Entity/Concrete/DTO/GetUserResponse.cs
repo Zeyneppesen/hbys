@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dene.Entity.Concrete.DTO
 {
-    public class MailVerifyRequest : BaseApiRequest
+    public class GetUserResponse:BaseApiResponse
     {
-    //    public string Guid { get; set; }
+        public List<UserModel> UserModels { get; set; }
     }
 }

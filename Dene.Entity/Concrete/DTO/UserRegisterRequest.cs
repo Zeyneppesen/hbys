@@ -13,9 +13,9 @@ namespace Dene.Entity.Concrete.DTO
         public string Email { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public long RoleId { get; set; }
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? Ip { get; set; }
+        //public long RoleId { get; set; }
+        //[System.Text.Json.Serialization.JsonIgnore]
+        //public string? Ip { get; set; }
        
     }
 }

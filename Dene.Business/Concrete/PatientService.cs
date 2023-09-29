@@ -71,8 +71,8 @@ namespace Dene.Business.Concrete
                 patient.Eposta = request.Eposta;
                 patient.Adress = request.Adress;
                 patient.PoliClinic = request.PoliClinic;
-                patient.InDate = request.InDate;
-                patient.OutDate = request.OutDate;
+                //patient.InDate = request.InDate;
+                //patient.OutDate = request.OutDate;
 
 
                 _patientRepository.Update(patient);
@@ -113,8 +113,8 @@ namespace Dene.Business.Concrete
                 patient.Eposta = request.Eposta;
                 patient.Adress = request.Adress;
                 patient.PoliClinic = request.PoliClinic;
-                patient.InDate = request.InDate;
-                patient.OutDate = request.OutDate;
+                //patient.InDate = request.InDate;
+                //patient.OutDate = request.OutDate;
                 _patientRepository.Add(patient);
                 response.Code = "200";
                 response.Message = "Veri Eklendi.";
@@ -155,8 +155,8 @@ namespace Dene.Business.Concrete
                         model.Eposta = patient.Eposta;
                         model.Adress = patient.Adress;
                         model.PoliClinic = patient.PoliClinic;
-                        model.InDate = patient.InDate;
-                        model.OutDate = patient.OutDate;
+                        //model.InDate = patient.InDate;
+                        //model.OutDate = patient.OutDate;
                         patientsModels.Add(model);
                     }
                 }
@@ -199,8 +199,8 @@ namespace Dene.Business.Concrete
                         model.Eposta = patient.Eposta;
                         model.Adress = patient.Adress;
                         model.PoliClinic = patient.PoliClinic;
-                        model.InDate = patient.InDate;
-                        model.OutDate = patient.OutDate;
+                        //model.InDate = patient.InDate;
+                        //model.OutDate = patient.OutDate;
                         patientsModels.Add(model);
                 }
 
@@ -240,8 +240,8 @@ namespace Dene.Business.Concrete
                         model.Eposta = patient.Eposta;
                         model.Adress = patient.Adress;
                         model.PoliClinic = patient.PoliClinic;
-                        model.InDate = patient.InDate;
-                        model.OutDate = patient.OutDate;
+                        //model.InDate = patient.InDate;
+                        //model.OutDate = patient.OutDate;
                         patientsModels.Add(model);
                     }
                 }
@@ -283,8 +283,8 @@ namespace Dene.Business.Concrete
                         model.Eposta = patient.Eposta;
                         model.Adress = patient.Adress;
                         model.PoliClinic = patient.PoliClinic;
-                        model.InDate = patient.InDate;
-                        model.OutDate = patient.OutDate;
+                        //model.InDate = patient.InDate;
+                        //model.OutDate = patient.OutDate;
                         patientsModels.Add(model);
                     }
                 }
@@ -324,8 +324,8 @@ namespace Dene.Business.Concrete
                         model.Eposta = patient.Eposta;
                         model.Adress = patient.Adress;
                         model.PoliClinic = patient.PoliClinic;
-                        model.InDate = patient.InDate;
-                        model.OutDate = patient.OutDate;
+                        //model.InDate = patient.InDate;
+                        //model.OutDate = patient.OutDate;
                         patientsModels.Add(model);
                     }
                 }
@@ -343,57 +343,57 @@ namespace Dene.Business.Concrete
             }
         }
 
-        public GetTotalAgeResponse GetTotalAge(GetTotalAgeRequest request)
-        {
-            var response = new GetTotalAgeResponse();
-            try
-            {
+        //public GetTotalAgeResponse GetTotalAge(GetTotalAgeRequest request)
+        //{
+        //    var response = new GetTotalAgeResponse();
+        //    try
+        //    {
 
-                var patients = _patientRepository.GetList();
-                List<PatientModel> patientsModels = new List<PatientModel>();
-                int totalAgeIn5Years = 0;
-                foreach (var patient in patients)
-                { 
+        //        var patients = _patientRepository.GetList();
+        //        List<PatientModel> patientsModels = new List<PatientModel>();
+        //        int totalAgeIn5Years = 0;
+        //        foreach (var patient in patients)
+        //        { 
 
-                        var model = new PatientModel();
-                        //model.Id = patient.Id;
-                        //model.Name = patient.Name;
-                        //model.LastName = patient.LastName;
-                        //model.TcNo = patient.TcNo;
-                        //model.Gender = patient.Gender;
-                        model.BirthDate = patient.BirthDate;
-                        //model.Place = patient.Place;
-                        //model.BloodType = patient.BloodType;
-                        //model.Phone = patient.Phone;
-                        //model.Eposta = patient.Eposta;
-                        //model.Adress = patient.Adress;
-                        //model.PoliClinic = patient.PoliClinic;
-                        //model.InDate = patient.InDate;
-                        //model.OutDate = patient.OutDate;
+        //                var model = new PatientModel();
+        //                //model.Id = patient.Id;
+        //                //model.Name = patient.Name;
+        //                //model.LastName = patient.LastName;
+        //                //model.TcNo = patient.TcNo;
+        //                //model.Gender = patient.Gender;
+        //                model.BirthDate = patient.BirthDate;
+        //                //model.Place = patient.Place;
+        //                //model.BloodType = patient.BloodType;
+        //                //model.Phone = patient.Phone;
+        //                //model.Eposta = patient.Eposta;
+        //                //model.Adress = patient.Adress;
+        //                //model.PoliClinic = patient.PoliClinic;
+        //                //model.InDate = patient.InDate;
+        //                //model.OutDate = patient.OutDate;
 
-                   // DateTime dgunu = new DateTime(1990, 12, 15);
-                    DateTime birthDateIn5Years = patient.BirthDate.AddYears(-5);
-                    int ageIn5Years=0;
-                   // int ageIn5Years = DateTime.Now.Year  - birthDateIn5Years.Year;
-                    totalAgeIn5Years += ageIn5Years;
-                    patientsModels.Add(model);
+        //           // DateTime dgunu = new DateTime(1990, 12, 15);
+        //            DateTime birthDateIn5Years = patient.BirthDate.AddYears(-5);
+        //            int ageIn5Years=0;
+        //           // int ageIn5Years = DateTime.Now.Year  - birthDateIn5Years.Year;
+        //            totalAgeIn5Years += ageIn5Years;
+        //            patientsModels.Add(model);
                     
-                }
-                response.TotalAgeIn5Years = totalAgeIn5Years;
+        //        }
+        //        response.TotalAgeIn5Years = totalAgeIn5Years;
 
-                response.PatientModels = patientsModels;
-                response.Code = "200";
-                response.Message = "5 yıl sonraki yaşları toplamı";
-                return response;
-            }
-            catch (Exception e)
-            {
+        //        response.PatientModels = patientsModels;
+        //        response.Code = "200";
+        //        response.Message = "5 yıl sonraki yaşları toplamı";
+        //        return response;
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                response.Errors.Add("Bir hata ile karşılaşıldı. " + e.Message);
-                response.Code = "400";
-                return response;
-            }
-        }
+        //        response.Errors.Add("Bir hata ile karşılaşıldı. " + e.Message);
+        //        response.Code = "400";
+        //        return response;
+        //    }
+        //}
     }
     }
 

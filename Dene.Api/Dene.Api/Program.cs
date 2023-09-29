@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Configuration;
 using System.Text;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,6 +20,7 @@ builder.Services.AddSwaggerDocumentation();
 builder.Services.AddSession();
 builder.Services.AddAuthentication();
 builder.Services.AddJwt();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

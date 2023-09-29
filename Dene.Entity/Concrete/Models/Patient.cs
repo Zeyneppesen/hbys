@@ -32,12 +32,8 @@ namespace Dene.Entity.Concrete.Models
         public string Adress{ get; set; }
         [Column("PoliClinic")]
         public string PoliClinic { get; set; }
-        [Column("InDate")]
-        public DateTime InDate { get; set; }
-        [Column("OutDate")]
-        public DateTime OutDate { get; set; }
-        
-        //[Column("AgeIn")]
-        //public DateTime AgeIn { get; set; }
+      
+      
+     
     }
 }

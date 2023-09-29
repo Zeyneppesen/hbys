@@ -11,10 +11,6 @@ namespace Dene.Entity.Concrete.Validators
     public class AddPatientValidator : AbstractValidator<AddPatientRequest>
     {
 
-        
-        public  AddPatientValidator()
-        {
-            RuleFor(s => s.Id).NotEmpty().WithMessage("mesajjjjjj");
-        }
+    
     }
 }

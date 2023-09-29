@@ -14,13 +14,13 @@ namespace Dene.Api.Controllers
         {
            _patientService = patientService;
         }
-        [HttpGet]
-        [Route("TotalAge")]
-        public GetTotalAgeResponse GetTotalAge()
-        {
-            GetTotalAgeRequest request = new GetTotalAgeRequest();
-            return _patientService.GetTotalAge(request);
-        }
+        //[HttpGet]
+        //[Route("TotalAge")]
+        //public GetTotalAgeResponse GetTotalAge()
+        //{
+        //    GetTotalAgeRequest request = new GetTotalAgeRequest();
+        //    return _patientService.GetTotalAge(request);
+        //}
         [HttpGet]
         [Route("GetNameWithZ")]
         public GetNameWithZResponse GetNameWithZ()

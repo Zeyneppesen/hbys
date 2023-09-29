@@ -12,10 +12,10 @@ namespace Dene.Entity.Concrete.Validators
     {
         public PasswordForgotValidator()
     {
-        RuleFor(x => x.Email)
-            .NotEmpty().WithMessage("Email adresi boş olamaz.")
-            .Length(2, 50).WithMessage("Email adresinin uzunluğu minimum 2 maksimum 50 karakter olmalıdır.")
-            .EmailAddress().WithMessage("Email adresi geçersizdir.");
+            RuleFor(x => x.Email);
+            //.NotEmpty().WithMessage("Email adresi boş olamaz.")
+            //.Length(2, 50).WithMessage("Email adresinin uzunluğu minimum 2 maksimum 50 karakter olmalıdır.")
+            //.EmailAddress().WithMessage("Email adresi geçersizdir.");
     }
     
     }

@@ -11,6 +11,6 @@ namespace Dene.Entity.Concrete.DTO
 
         public string Guid { get; set; }
         public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
+       // public string ConfirmPassword { get; set; }
     }
 }

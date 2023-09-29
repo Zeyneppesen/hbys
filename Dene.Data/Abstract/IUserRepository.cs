@@ -1,4 +1,5 @@
 ﻿using Dene.Core.Abstract;
+using Dene.Entity.Concrete.DTO;
 using Dene.Entity.Concrete.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace Dene.Data.Abstract
 {
-    public interface IUserRepository:IEntityRepository<User>
+    public interface IUserRepository : IEntityRepository<User>
     {
+      
     }
 }

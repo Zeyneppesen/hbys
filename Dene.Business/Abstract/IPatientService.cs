@@ -9,7 +9,7 @@ namespace Dene.Business.Abstract
 {
    public interface IPatientService
     {
-         GetTotalAgeResponse GetTotalAge(GetTotalAgeRequest request);
+     //    GetTotalAgeResponse GetTotalAge(GetTotalAgeRequest request);
          GetNameWithZResponse GetNameWithZ(GetNameWithZRequest request);
          GetManOverTewFourResponse GetManOverTewFour(GetManOverTewFourRequest request);
          GetManPatientResponse GetManList(GetManPatientRequest request);

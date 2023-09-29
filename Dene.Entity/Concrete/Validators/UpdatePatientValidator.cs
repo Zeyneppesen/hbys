@@ -10,9 +10,9 @@ namespace Dene.Entity.Concrete.Validators
 {
     public class UpdatePatientValidator: AbstractValidator<UpdatePatientRequest>
     {
-        public UpdatePatientValidator()
-        {
-            RuleFor(s => s.Id).NotEmpty().WithMessage("mesajjjjjj");
-        }
+        //public UpdatePatientValidator()
+        //{
+        //    RuleFor(s => s.Id).NotEmpty().WithMessage("mesajjjjjj");
+        //}
     }
 }

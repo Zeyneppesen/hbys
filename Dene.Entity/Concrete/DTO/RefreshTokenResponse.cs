@@ -8,6 +8,6 @@ namespace Dene.Entity.Concrete.DTO
 {
     public class RefreshTokenResponse : BaseApiResponse
     {
-        public string Token { get; set; }
+       // public string Token { get; set; }
     }
 }

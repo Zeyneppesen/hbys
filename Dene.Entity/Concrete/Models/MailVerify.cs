@@ -1,10 +1,9 @@
-﻿using Dene.Core.Data.Entities;
-using System;
-using System.Collections.Generic;
+﻿#region Assembly Agriculture.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// C:\Users\asus\source\repos\Agriculture\Agriculture.Entity\obj\Debug\net6.0\ref\Agriculture.Entity.dll
+#endregion
+using Dene.Core.Data.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dene.Entity.Concrete.Models
 {
@@ -16,8 +15,7 @@ namespace Dene.Entity.Concrete.Models
             [Column("UserId")]
             public long UserId { get; set; }
 
-            [Column("Guid")]
-            public string Guid { get; set; }
+            
         
     }
 }
