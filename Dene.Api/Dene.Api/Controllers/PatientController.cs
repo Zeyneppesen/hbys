@@ -12,45 +12,25 @@ namespace Dene.Api.Controllers
         private readonly IPatientService _patientService;
         public PatientController(IPatientService patientService)
         {
-           _patientService = patientService;
+            _patientService = patientService;
         }
+
+
         //[HttpGet]
-        //[Route("TotalAge")]
-        //public GetTotalAgeResponse GetTotalAge()
+        //[Route("GetMan")]
+        //public GetManPatientResponse GetManList()
         //{
-        //    GetTotalAgeRequest request = new GetTotalAgeRequest();
-        //    return _patientService.GetTotalAge(request);
+        //    GetManPatientRequest request = new GetManPatientRequest();
+        //    return _patientService.GetManList(request);
         //}
-        [HttpGet]
-        [Route("GetNameWithZ")]
-        public GetNameWithZResponse GetNameWithZ()
-        {
-            GetNameWithZRequest request = new GetNameWithZRequest();
-            return _patientService.GetNameWithZ(request);
-        }
-        [HttpGet]
-        [Route("GetManOverTewFour")]
-        public GetManOverTewFourResponse GetManOverTewFour()
-        {
-            GetManOverTewFourRequest request = new GetManOverTewFourRequest();
-            return _patientService.GetManOverTewFour(request);
-        }
 
-        [HttpGet]
-        [Route("GetMan")]
-        public GetManPatientResponse GetManList()
-        {
-            GetManPatientRequest request = new GetManPatientRequest();
-            return _patientService.GetManList(request);
-        }
-
-        [HttpGet]
-        [Route("GetWomen")]
-        public GetWomenPatientResponse GetWomenList()
-        {
-            GetWomenPatientRequest request = new GetWomenPatientRequest();
-            return _patientService.GetWomenList(request);
-        }
+        //[HttpGet]
+        //[Route("GetWomen")]
+        //public GetWomenPatientResponse GetWomenList()
+        //{
+        //    GetWomenPatientRequest request = new GetWomenPatientRequest();
+        //    return _patientService.GetWomenList(request);
+        //}
 
         [HttpDelete]
         [Route("DeletePatient")]
@@ -69,7 +49,7 @@ namespace Dene.Api.Controllers
         [Route("AddPatient")]
         public AddPatientResponse AddPatient(AddPatientRequest request)
         {
-           // GetPatientRequest request = new GetPatientRequest();
+            // GetPatientRequest request = new GetPatientRequest();
             return _patientService.AddPatient(request);
         }
 
@@ -77,7 +57,7 @@ namespace Dene.Api.Controllers
         [Route("GetPatient")]
         public GetPatientResponse GetPatient()
         {
-            GetPatientRequest request =new GetPatientRequest();
+            GetPatientRequest request = new GetPatientRequest();
             return _patientService.GetList(request);
         }
     }

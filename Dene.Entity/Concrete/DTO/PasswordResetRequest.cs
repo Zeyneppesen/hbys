@@ -9,8 +9,8 @@ namespace Dene.Entity.Concrete.DTO
     public class PasswordResetRequest:BaseApiRequest
     {
 
-        public string Guid { get; set; }
-        public string Password { get; set; }
-       // public string ConfirmPassword { get; set; }
+       // public string Guid { get; set; }
+       // public string Password { get; set; }
+       //// public string ConfirmPassword { get; set; }
     }
 }

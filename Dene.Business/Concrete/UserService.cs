@@ -17,13 +17,13 @@ namespace Dene.Business.Concrete
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-       // private readonly IMailVerifyRepository _mailVerifyRepository;
+        private readonly IMailVerifyRepository _mailVerifyRepository;
 
-
-        public UserService(IUserRepository userRepository)
+    
+        public UserService(IUserRepository userRepository,IMailVerifyRepository mailVerifyRepository)
         {
             _userRepository = userRepository;
-         //  _mailVerifyRepository = mailVerifyRepository;
+            _mailVerifyRepository = mailVerifyRepository;
 
         }
 
@@ -54,6 +54,55 @@ namespace Dene.Business.Concrete
             }
             catch (Exception e)
             {
+                response.Errors.Add("Bir hata ile karşılaşıldı. " + e.Message);
+                response.Code = "400";
+                return response;
+            }
+        }
+
+        public UserRegisterResponse Register(UserRegisterRequest request)
+        {
+            var response = new UserRegisterResponse();
+            try
+            {
+                var validator = new RegisterValidator();
+                var validatorResult = validator.Validate(request);
+
+                if (!validatorResult.IsValid)
+                {
+                    foreach (var err in validatorResult.Errors)
+                    {
+                        response.Errors.Add(err.ErrorMessage);
+                    }
+                    response.Code = "400";
+                    response.Message = "bir hata alındı.";
+                    response.Errors.Add("Doğrulama hatası");
+                    return response;
+                }
+                //var user = Get(request.Email);
+                //if (user != null)
+                //{
+                //    return GetRegisterResponse("400", "Bu email adresine kayıtlı kullanıcı bulunmaktadır.");
+                //}
+
+
+              //  var mailUser = _userRepository.Add(SetUserDefualtData(request));
+                MailVerify mailVerify = new MailVerify();
+              //  mailVerify.UserId = mailUser.Id;
+             //   mailVerify.Guid = Guid.NewGuid().ToString();
+
+              //  mailVerify.CreatedDate = DateTime.Now;
+               // mailVerify.DeletedDate = DateTime.Now.AddDays(1);
+                _mailVerifyRepository.Add(mailVerify);
+                //  SendVerifyEmail(mailUser.Email, mailVerify.Guid);
+
+                return response;
+            }
+            catch (Exception e)
+            {
+
+                response.Code = "400";
+                response.Message = e + " Hatası";
                 return response;
             }
         }

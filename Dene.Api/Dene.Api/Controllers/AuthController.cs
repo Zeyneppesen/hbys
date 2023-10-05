@@ -14,14 +14,26 @@ namespace Dene.Api.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
+
     public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly IConfiguration _configuration;
-        public AuthController(IUserService userService, IConfiguration configuration)
+
+        public AuthController(IUserService userService)
         {
             _userService = userService;
-            _configuration = configuration;
+
+        }
+        [SwaggerOperation(Summary = "Kullanıcı kayıt ", Description = "<h2> Kullanıcı </h2> Kullanıcı kayıt alanı.")]
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("Register")]
+        public UserRegisterResponse Register(UserRegisterRequest userRegisterRequest)
+        {
+            // userRegisterRequest.Ip = HttpContext.Connection.RemoteIpAddress?.ToString();
+
+
+            return _userService.Register(userRegisterRequest);
         }
 
         [HttpGet]
@@ -30,13 +42,14 @@ namespace Dene.Api.Controllers
         //{
 
         //}
+
         public GetUserResponse GetUser()
         {
-            GetUserRequest request=new GetUserRequest();
+            GetUserRequest request = new GetUserRequest();
             return _userService.GetUser(request);
 
         }
-       
+
     }
 
 }

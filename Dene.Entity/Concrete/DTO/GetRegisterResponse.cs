@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dene.Entity.Concrete.DTO
 {
-    public class RefreshTokenRequest:BaseApiRequest
+    public class GetRegisterResponse:BaseApiResponse
     {
-    //    public string Email { get; set; }
-    //    public string Password { get; set; }
     }
 }

@@ -13,8 +13,8 @@ namespace Dene.Entity.Concrete.Models
     {
        
        
-            [Column("UserId")]
-            public long UserId { get; set; }
+            //[Column("UserId")]
+            //public long UserId { get; set; }
 
         
     }

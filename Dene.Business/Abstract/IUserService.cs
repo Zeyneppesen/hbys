@@ -10,6 +10,6 @@ namespace Dene.Business.Abstract
     public interface IUserService
     {
         GetUserResponse GetUser(GetUserRequest request);
-      
+        UserRegisterResponse Register(UserRegisterRequest request);
     }
 }

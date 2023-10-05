@@ -14,13 +14,13 @@ namespace Dene.Api.Extensions
 
             //Services
           
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IPatientService, PatientService>();
+           services.AddScoped<IUserService, UserService>();
+           services.AddScoped<IPatientService, PatientService>();
 
 
 
             ////Repository
-            //services.AddScoped<IMailVerifyRepository,EfMailVerifyRepository>();
+            services.AddScoped<IMailVerifyRepository,EfMailVerifyRepository>();
             services.AddScoped<IUserRepository,EfUserRepository>();
             services.AddScoped<IPatientRepository, EfPatientRepository>();
 

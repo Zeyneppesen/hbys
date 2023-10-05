@@ -11,10 +11,10 @@ namespace Dene.Core.Data.Entities
     public class BaseEntity : IEntity
     {
 
-        //[Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //[Column("Id")]
-        //public long Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("Id")]
+        public long Id { get; set; }
 
         //[Key]
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
