@@ -12,7 +12,7 @@ namespace Dene.Entity.Concrete.Models
         public string Name { get; set; }
         [Column("Surname")]
 
-        public string? Surname { get; set; }
+        public string Surname { get; set; }
         [Column("Email")]
         public string Email { get; set; }
         [Column("Password")]

@@ -16,5 +16,6 @@ namespace Dene.Core.Abstract
 
         T Delete(T entity);
         T Update(T entity);
+      
     }
 }

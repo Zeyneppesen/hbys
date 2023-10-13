@@ -15,5 +15,6 @@ namespace Dene.Entity.Concrete.DTO
         public string Password { get; set; }
         public string Phone { get; set; }
         public bool Status { get; set; }
+        public long RoleId { get; set; }
     }
 }

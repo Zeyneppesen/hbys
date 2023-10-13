@@ -20,10 +20,10 @@ namespace Dene.Business.Concrete
         private readonly IMailVerifyRepository _mailVerifyRepository;
 
     
-        public UserService(IUserRepository userRepository,IMailVerifyRepository mailVerifyRepository)
+        public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _mailVerifyRepository = mailVerifyRepository;
+          //  _mailVerifyRepository = mailVerifyRepository;
 
         }
 
@@ -46,6 +46,7 @@ namespace Dene.Business.Concrete
                     model.Password = user.Password;
                     model.Phone = user.Phone;
                     model.Status = user.Status;
+                    model.RoleId= user.RoleId;
                     usersModels.Add(model);
 
                 }
@@ -65,36 +66,10 @@ namespace Dene.Business.Concrete
             var response = new UserRegisterResponse();
             try
             {
-                var validator = new RegisterValidator();
-                var validatorResult = validator.Validate(request);
-
-                if (!validatorResult.IsValid)
-                {
-                    foreach (var err in validatorResult.Errors)
-                    {
-                        response.Errors.Add(err.ErrorMessage);
-                    }
-                    response.Code = "400";
-                    response.Message = "bir hata alındı.";
-                    response.Errors.Add("Doğrulama hatası");
-                    return response;
-                }
-                //var user = Get(request.Email);
-                //if (user != null)
-                //{
-                //    return GetRegisterResponse("400", "Bu email adresine kayıtlı kullanıcı bulunmaktadır.");
-                //}
-
-
-              //  var mailUser = _userRepository.Add(SetUserDefualtData(request));
-                MailVerify mailVerify = new MailVerify();
-              //  mailVerify.UserId = mailUser.Id;
-             //   mailVerify.Guid = Guid.NewGuid().ToString();
-
-              //  mailVerify.CreatedDate = DateTime.Now;
-               // mailVerify.DeletedDate = DateTime.Now.AddDays(1);
-                _mailVerifyRepository.Add(mailVerify);
-                //  SendVerifyEmail(mailUser.Email, mailVerify.Guid);
+              
+                 User user=new User();
+                _userRepository.Add(user);
+               
 
                 return response;
             }

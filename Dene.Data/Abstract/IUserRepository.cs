@@ -10,6 +10,6 @@ namespace Dene.Data.Abstract
 {
     public interface IUserRepository : IEntityRepository<User>
     {
-      
+       
     }
 }

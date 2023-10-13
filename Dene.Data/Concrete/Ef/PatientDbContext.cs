@@ -12,5 +12,6 @@ namespace Dene.Data.Concrete.Ef
         }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<MailVerify> MailVerifys { get; set; }
     }
 }
