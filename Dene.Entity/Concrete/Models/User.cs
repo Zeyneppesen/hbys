@@ -25,6 +25,7 @@ namespace Dene.Entity.Concrete.Models
         public bool Status { get; set; }
         [Column("RoleId")]
         public long RoleId { get; set; }
+        public string? Ip { get; set; }
 
 
 

@@ -8,6 +8,6 @@ namespace Dene.Entity.Concrete.DTO
 {
     public class MailVerifyRequest : BaseApiRequest
     {
-    //    public string Guid { get; set; }
+        public string Ip { get; set; }
     }
 }

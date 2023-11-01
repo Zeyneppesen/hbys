@@ -1,4 +1,5 @@
 ﻿using Dene.Entity.Concrete.DTO;
+using Dene.Entity.Concrete.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace Dene.Business.Abstract
     {
         GetUserResponse GetUser(GetUserRequest request);
         UserRegisterResponse Register(UserRegisterRequest request);
+        User Get(string email);
+        User Get(long id);
+        MailVerifyResponse Verify(MailVerifyRequest request);
+
     }
 }

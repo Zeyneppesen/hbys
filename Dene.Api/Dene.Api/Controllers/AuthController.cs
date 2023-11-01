@@ -30,7 +30,7 @@ namespace Dene.Api.Controllers
         [Route("Register")]
         public UserRegisterResponse Register(UserRegisterRequest userRegisterRequest)
         {
-            // userRegisterRequest.Ip = HttpContext.Connection.RemoteIpAddress?.ToString();
+            userRegisterRequest.Ip = HttpContext.Connection.RemoteIpAddress?.ToString();
 
 
             return _userService.Register(userRegisterRequest);

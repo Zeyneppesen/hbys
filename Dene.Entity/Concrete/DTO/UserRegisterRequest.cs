@@ -8,7 +8,7 @@ namespace Dene.Entity.Concrete.DTO
 {
     public class UserRegisterRequest : BaseApiRequest
     {
-       public long Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
@@ -16,7 +16,8 @@ namespace Dene.Entity.Concrete.DTO
         public string Phone { get; set; }
         public bool Status { get; set; }
         public long RoleId { get; set; }
-       
-       
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? Ip { get; set; }
+
     }
 }

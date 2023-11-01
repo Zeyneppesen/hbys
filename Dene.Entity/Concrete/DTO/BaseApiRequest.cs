@@ -9,6 +9,9 @@ namespace Dene.Entity.Concrete.DTO
     public class BaseApiRequest
     {
         [System.Text.Json.Serialization.JsonIgnore]
-        public long Id { get; set; }
+        public long UserId { get; set; }
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        public long RoleId { get; set; }
     }
 }

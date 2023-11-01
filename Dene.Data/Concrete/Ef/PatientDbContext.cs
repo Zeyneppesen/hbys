@@ -8,7 +8,7 @@ namespace Dene.Data.Concrete.Ef
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-CLIQULU; Initial Catalog=DenemeDbContext; Integrated Security=True; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-R4ITLSH; Initial Catalog=DenemeDbContext; Integrated Security=True; TrustServerCertificate=True");
         }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<User> Users { get; set; }

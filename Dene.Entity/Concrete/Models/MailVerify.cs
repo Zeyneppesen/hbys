@@ -16,6 +16,6 @@ namespace Dene.Entity.Concrete.Models
 
         [Column("Status")]
         public bool Status { get; set; }
-
+        public string Ip { get; set; }
     }
 }

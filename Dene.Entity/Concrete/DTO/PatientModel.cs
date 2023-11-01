@@ -22,9 +22,7 @@ namespace Dene.Entity.Concrete.DTO
         public string Eposta { get; set; }
         public string Adress { get; set; }
         public string PoliClinic { get; set; }
-        public DateTime InDate { get; set; }
-        public DateTime OutDate { get; set; }
-        public DateTime AgeIn { get; set; }
+        
 
     }
 }
