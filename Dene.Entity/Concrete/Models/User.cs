@@ -8,6 +8,8 @@ namespace Dene.Entity.Concrete.Models
     {
         [Column("Id")]
         public long Id { get; set; }
+        [Column("UserId")]
+        public long UserId { get; set; }
         [Column("Name")]
         public string Name { get; set; }
         [Column("Surname")]
@@ -29,7 +31,7 @@ namespace Dene.Entity.Concrete.Models
 
 
 
-        //[NotMapped]
-        //public bool Remember { get; set; }
+        [NotMapped]/// bu propertiy i veri tabanına eklemez.
+        public bool Remember { get; set; }
     }
 }
